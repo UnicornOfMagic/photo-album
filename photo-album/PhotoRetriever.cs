@@ -16,5 +16,15 @@ namespace photo_album
         {
             return await _photoService.GetPhotosByAlbumId(id);
         }
+
+        public async Task<IEnumerable<Photo>> GetAllPhotos()
+        {
+            return await _photoService.GetAllPhotos();
+        }
+
+        public async Task<Photo> GetPhotoById(int id)
+        {
+            return await _photoService.GetPhotoById(id);
+        }
     }
 }

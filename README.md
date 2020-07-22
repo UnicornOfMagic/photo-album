@@ -24,3 +24,7 @@ Most common usage will be something along the lines of: \
 Valid `{albumID}` parameters are integers from 1-100.
 
 e.g. `dotnet ~/Path/To/Dll/photoalbum.dll 50` will return all photos in album 50.
+
+## Interactive mode
+Do you anticipate needing a lot of photos and find running the command repeatedly tiresome? Then you may be interested in interactive mode. \
+Simply add a `-i` parameter in place of the album id and you'll be able to interface directly with the program for repeatable and quick photo acquisition.
