@@ -10,5 +10,10 @@ namespace photo_album
             Title = title;
             Id = id;
         }
+
+        public override string ToString()
+        {
+            return $"[{Id}] {Title}";
+        }
     }
 }
