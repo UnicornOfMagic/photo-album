@@ -19,7 +19,7 @@ You can download that [here](https://dotnet.microsoft.com/download). \
 The photo album application is a command line application invoked via the dotnet core cli. The application will run once given a single parameter.
 
 Most common usage will be something along the lines of: \
- ```dotnet ~/Path/To/Dll/photoalbum.dll {albumID}``` \
+ ```dotnet ~/Path/To/Dll/photoalbum.dll {albumID}``` 
  
 Valid `{albumID}` parameters are integers from 1-100.
 
