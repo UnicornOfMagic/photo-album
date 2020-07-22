@@ -97,6 +97,9 @@ namespace photo_album
                     case '4':
                         userQuit = true;
                         break;
+                    default:
+                        Console.WriteLine("\nUnknown entry. Please try again.\n");
+                        break;
                 }
             } while (!userQuit);
             
@@ -106,33 +109,49 @@ namespace photo_album
 
         private static void GetPhotoAlbumById()
         {
-            Console.Write("\nPlease enter the ID of the album you wish to view: ");
-            var userInput = Console.ReadLine();
-            if (int.TryParse(userInput, out var value))
+            var userQuit = false;
+            do
             {
-                GetPhotosByAlbumId(value);
-            }
-            else
-            {
-                Console.WriteLine("\nInvalid entry. Value must be a valid integer from 1-100.");
-            }
+                Console.Write("\nPlease enter the ID of the album you wish to view (x to return to main menu): ");
+                var userInput = Console.ReadLine();
+                if (int.TryParse(userInput, out var value))
+                {
+                    GetPhotosByAlbumId(value);
+                }
+                else if (userInput.Equals("x") || userInput.Equals("X"))
+                {
+                    userQuit = true;
+                }
+                else
+                {
+                    Console.WriteLine("\nInvalid entry. Value must be a valid integer from 1-100.");
+                }
+            } while (!userQuit);
         }
 
         private static void GetSinglePhotoById()
         {
-            Console.Write("\nPlease enter the ID of the photo you wish to view: ");
-            var userInput = Console.ReadLine();
-            if (int.TryParse(userInput, out var value))
+            var userQuit = false;
+            do
             {
+                Console.Write("\nPlease enter the ID of the photo you wish to view (x to return to main menu): ");
+                var userInput = Console.ReadLine();
+                if (int.TryParse(userInput, out var value))
+                {
 
-                var photo = _photoRetriever.GetPhotoById(value).GetAwaiter().GetResult();
-                Console.WriteLine("\nPhoto retrieved:");
-                Console.WriteLine(photo);
-            }
-            else
-            {
-                Console.WriteLine("\nInvalid entry. Value must be a valid integer from 1-5000.");
-            }
+                    var photo = _photoRetriever.GetPhotoById(value).GetAwaiter().GetResult();
+                    Console.WriteLine("\nPhoto retrieved:");
+                    Console.WriteLine(photo);
+                }
+                else if (userInput.Equals("x") || userInput.Equals("X"))
+                {
+                    userQuit = true;
+                }
+                else
+                {
+                    Console.WriteLine("\nInvalid entry. Value must be a valid integer from 1-5000.");
+                }
+            } while (!userQuit);
         }
 
         private static void GetAllPhotos()
