@@ -2,20 +2,20 @@
 
 # Photo Album Technical Showcase
 
-##Introduction
+## Introduction
 Hello! This is my Technical Showcase for the Photo Album project. 
 
-##Installation Instructions
+## Installation Instructions
 As this is a dotnet core project, there is no executable. Only a DLL. \
 The quickest way to install is to download the latest release found in the releases tab and extract the zip archive. \
 However, if you want to compile it yourself a simple `dotnet publish -c Release` will suffice.
 
-##Requirements
+## Requirements
 In order to run the dotnet application, you must have the dotnet cli installed which is included in the dotnet core sdk. \
 You can download that [here](https://dotnet.microsoft.com/download). \
 **Note: This project requires dotnet core 3.1 at a minimum**
 
-##Usage Instructions
+## Usage Instructions
 The photo album application is a command line application invoked via the dotnet core cli. The application will run once given a single parameter.
 
 Most common usage will be something along the lines of: \
